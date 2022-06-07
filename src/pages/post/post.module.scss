@@ -1,0 +1,51 @@
+.container {
+  width: 100vw;
+
+  .banner {
+    width: 100vw;
+    object-fit: cover;
+    height: 400px;
+  }
+
+  .content {
+
+    margin: 2.5rem auto 0;
+    color: var(--text-body);
+
+    header {
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      .informacoes {
+        display: flex;
+        gap: 25px;
+        font-size: 0.8rem;
+      }
+    }
+
+
+    .group {
+      margin: 2rem 0;
+
+      h3 {
+        margin: 3rem 0;
+        color: var(--text-body);
+      }
+
+      p {
+        margin: 1.5rem 0;
+        font-size: 0.9rem;
+        text-align: justify;
+        color: var(--text-info);
+      }
+
+      li {
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+        text-align: justify;
+        color: var(--text-info);
+      }
+    }
+  }
+}

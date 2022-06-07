@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background: #1A1D23;
+  --btn-loading: #FF57B2;
+  --text-body: #D7D7D7;
+  --text-info: #BBBBBB;
+  --heading: #F8F8F8;
+}
+
+
+body,
+button {
+  background-color: var(--background);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: underline;
+  font-style: italic;
+  color: inherit;
+}

@@ -1,0 +1,61 @@
+{
+  "id": "b38ad453-fded-42c7-bb0a-5e2cae1fb156",
+  "uid": "aut-voluptatem-a",
+  "type": "blog-rocketseat",
+  "data": {
+    "title": "whiteboard killer markets",
+    "subtitle": "redefine robust initiatives",
+    "author": "benchmark bleeding-edge schemas",
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+    },
+    "content": [
+      {
+        "heading": "disintermediate one-to-one mindshare",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Mollit non eu non ad qui dolore esse voluptate Lorem nulla fugiat ullamco deserunt eiusmod fugiat. Elit nulla cupidatat amet officia nulla adipisicing voluptate in aliquip cillum cupidatat exercitation ex in aliqua. Ex ut velit amet minim non fugiat ea.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "streamline cutting-edge niches",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Cupidatat esse non sit. In adipisicing et Lorem amet ex ea est aliqua enim mollit est.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "drive scalable e-commerce",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Officia ex proident aliquip. Non est consequat incididunt quis deserunt anim duis aute id non laboris.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "morph virtual e-tailers",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Ut in sit est est officia voluptate voluptate. Nulla ad sit eiusmod Lorem quis consectetur eu ex ullamco eu excepteur velit minim. Non consequat officia enim occaecat deserunt irure in exercitation duis excepteur esse cillum aute.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+.container {
+  .posts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+
+    div {
+      transition: color 1s ease-in;
+      cursor: pointer;
+
+      &:hover {
+        header {
+
+          h1 {
+            transition: color .4s ease-in-out;
+
+            color: var(--btn-loading);
+          }
+        }
+      }
+
+      header {
+
+        h1 {
+          font-size: 1.6rem;
+          line-height: 2.5rem;
+          color: var(--heading);
+        }
+
+        p {
+          color: var(--text-info);
+          font-size: 1rem;
+        }
+      }
+
+      .footerPost {
+        display: flex;
+        margin-top: 10px;
+        gap: 10px;
+        color: var(--text-info);
+        font-size: 0.7rem;
+      }
+    }
+
+  }
+
+  .btn_loading {
+    color: var(--btn-loading);
+    margin: 2rem 0 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+
+    &:hover {
+      filter: brightness(0.85);
+    }
+  }
+
+}

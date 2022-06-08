@@ -12,7 +12,7 @@ import commonStyles from '../styles/common.module.scss';
 
 import { format } from 'date-fns';
 import { FiUser, FiCalendar } from 'react-icons/fi'
-
+import ptBR from 'date-fns/locale/pt-BR';
 
 interface Post {
   uid?: string;
@@ -76,7 +76,9 @@ export default function Home({ postsPagination }: HomeProps) {
                 </header>
                 <div className={styles.footerPost}>
                   <time>
-                    <FiCalendar size={16} /> {format(new Date(post.first_publication_date), 'dd/MM/yyyy')}
+                    <FiCalendar size={16} /> {format(new Date(post.first_publication_date), 'dd MMM yyyy', {
+                      locale: ptBR
+                    })}
                   </time>
                   <p>
                     <FiUser size={16} />{post.data.author}

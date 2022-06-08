@@ -11,6 +11,7 @@ import styles from './post.module.scss';
 import { FiUser, FiCalendar, FiClock } from 'react-icons/fi'
 
 import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 
 interface Post {
@@ -95,7 +96,9 @@ export default function Post({ post }: PostProps) {
             <time>
               <FiCalendar /> {format(
                 new Date(post.first_publication_date),
-                'dd/MM/yyyy'
+                'dd MMM yyyy', {
+                locale: ptBR
+              }
               )}
             </time>
             <p><FiUser />{post.data.author}</p>
@@ -136,14 +139,20 @@ export default function Post({ post }: PostProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const prismic = getPrismicClient({});
   const posts = await prismic.getByType('blog-rocketseat', {
-    pageSize: 1
+    pageSize: 1,
   });
+
 
   return {
     paths: [{
-      params: { slug: posts.results[0].uid }
-    }],
-    fallback: true
+      params: { slug: 'como-utilizar-hooks' }
+    },
+    {
+      params: { slug: 'criando-um-app-cra-do-zero' }
+    }
+    ],
+    fallback: true,
+
   }
 };
 
@@ -151,6 +160,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params;
   const prismic = getPrismicClient({});
   const response = await prismic.getByUID('blog-rocketseat', String(slug))
+
 
   return {
     props: {

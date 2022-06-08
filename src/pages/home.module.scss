@@ -37,9 +37,16 @@
       .footerPost {
         display: flex;
         margin-top: 10px;
-        gap: 10px;
+        gap: 20px;
         color: var(--text-info);
         font-size: 0.7rem;
+
+        time,
+        p {
+          display: flex;
+          align-items: center;
+          gap: 5px
+        }
       }
     }
 

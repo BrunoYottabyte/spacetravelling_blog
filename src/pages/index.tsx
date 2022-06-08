@@ -10,6 +10,10 @@ import { getPrismicClient } from '../services/prismic';
 import styles from './home.module.scss';
 import commonStyles from '../styles/common.module.scss';
 
+import { format } from 'date-fns';
+import { FiUser, FiCalendar } from 'react-icons/fi'
+
+
 interface Post {
   uid?: string;
   first_publication_date: string | null;
@@ -64,18 +68,18 @@ export default function Home({ postsPagination }: HomeProps) {
       <section className={styles.posts}>
         {posts.results.map(post => {
           return (
-            <Link href={`/post/${post.uid}`}>
-              <div key={post.uid}>
+            <Link href={`/post/${post.uid}`} key={post.uid}>
+              <div>
                 <header>
                   <h1>{post.data.title}</h1>
                   <p>{post.data.subtitle}</p>
                 </header>
                 <div className={styles.footerPost}>
                   <time>
-                    {post.first_publication_date}
+                    <FiCalendar size={16} /> {format(new Date(post.first_publication_date), 'dd/MM/yyyy')}
                   </time>
                   <p>
-                    {post.data.author}
+                    <FiUser size={16} />{post.data.author}
                   </p>
                 </div>
               </div>

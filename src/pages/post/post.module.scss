@@ -21,6 +21,16 @@
         display: flex;
         gap: 25px;
         font-size: 0.8rem;
+
+
+        p,
+        span {
+          height: 100%;
+
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
       }
     }
 
@@ -48,4 +58,16 @@
       }
     }
   }
+}
+
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  color: var(--text-body)
 }

@@ -1,13 +1,17 @@
-import { asHTML } from '@prismicio/helpers';
-import { asText } from '@prismicio/richtext';
+import { asHTML, } from '@prismicio/helpers';
 import { GetStaticPaths, GetStaticProps } from 'next';
+
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Header from '../../components/Header';
 
 import { getPrismicClient } from '../../services/prismic';
-
 import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
+import { FiUser, FiCalendar, FiClock } from 'react-icons/fi'
+
+import { format } from 'date-fns';
+
 
 interface Post {
   first_publication_date: string | null;
@@ -32,10 +36,44 @@ interface PostProps {
 
 export default function Post({ post }: PostProps) {
   let title = "";
-  if (post.data.title.length > 60) {
+  if (post?.data.title.length > 60) {
     title = post.data.title.slice(0, 60).concat('...');
   } else {
-    title = post.data.title;
+    title = post?.data.title;
+  }
+
+  const timeLearning = () => {
+    let arr = post?.data.content;
+
+    const total = arr?.map(content => {
+
+      const allHeading = content.heading.split(" ").length
+
+      const allContent = content.body.map(body => {
+        return body.text.split(" ").length;
+      })
+      return [allHeading, ...allContent];
+
+    }).flat().reduce((ac, el) => {
+      ac += el
+      return ac
+    }, 0)
+
+    let min = Math.ceil(Number(total) / 200);
+
+    return min;
+
+  }
+
+  const time = timeLearning();
+
+
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <div className={styles.loading}>Carregando...</div>
+    )
   }
 
   return (
@@ -55,11 +93,14 @@ export default function Post({ post }: PostProps) {
 
           <div className={styles.informacoes}>
             <time>
-              {post.first_publication_date}
+              <FiCalendar /> {format(
+                new Date(post.first_publication_date),
+                'dd/MM/yyyy'
+              )}
             </time>
-            <p>{post.data.author}</p>
+            <p><FiUser />{post.data.author}</p>
             <span>
-              4 min
+              <FiClock /> {time} min
             </span>
           </div>
 
@@ -94,13 +135,16 @@ export default function Post({ post }: PostProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const prismic = getPrismicClient({});
-  // const posts = await prismic.getByType(TODO);
+  const posts = await prismic.getByType('blog-rocketseat', {
+    pageSize: 1
+  });
 
   return {
-    paths: [],
+    paths: [{
+      params: { slug: posts.results[0].uid }
+    }],
     fallback: true
   }
-  // TODO
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -108,7 +152,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const prismic = getPrismicClient({});
   const response = await prismic.getByUID('blog-rocketseat', String(slug))
 
-  console.log(JSON.stringify(response, null, 2));
   return {
     props: {
       post: response

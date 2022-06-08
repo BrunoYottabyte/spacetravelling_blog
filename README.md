@@ -1,12 +1,16 @@
 # Desafio da rocket para certificação | ReactJS | Trilha Ignite | Chapter III :tada: :tada: :tada:
 
-## Telas da aplicação 
-
+## Telas da aplicação
 ![61051c7a-a010-4585-8b4a-c519b577aec5](https://user-images.githubusercontent.com/70710358/172685816-0aea01ef-c3f5-4983-9fe4-f950a3ab17b1.gif)
 <br></br>
 <br></br>
 ![dcc74d59-4e25-45d4-9120-20aae08c646a (1)](https://user-images.githubusercontent.com/70710358/172685350-19786c1b-02cc-4c73-8aea-14f3bf1effd8.gif)
- 
+
+## Modelo da aplicação (F I G M A)
+```
+https://www.figma.com/file/0Y26j0tf1K2WB5c1ja5hov/Desafios-M%C3%B3dulo-3-ReactJS/duplicate
+```
+
  ## Tecnologias utilizadas
 
   <div style="display: inline_block"><br>

@@ -1,4 +1,4 @@
-# Desafio da rocket para certificação | ReactJS | Trilha Ignite | Chapter III :tada: :tada: :tada:
+# Desafio da rocket consumindo dados de um CMS para certificação | ReactJS | Trilha Ignite | Chapter III :tada: :tada: :tada:
 
 ## Telas da aplicação
 ![61051c7a-a010-4585-8b4a-c519b577aec5](https://user-images.githubusercontent.com/70710358/172685816-0aea01ef-c3f5-4983-9fe4-f950a3ab17b1.gif)
